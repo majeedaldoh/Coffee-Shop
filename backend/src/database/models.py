@@ -1,5 +1,5 @@
 import os
-from sqlalchemy import Column, String, Integer
+from SQLAlchemy import Column, String, Integer
 from flask_sqlalchemy import SQLAlchemy
 import json
 
@@ -38,7 +38,7 @@ def db_drop_and_create_all():
         title='water',
         recipe='[{"name": "water", "color": "blue", "parts": 1}]'
     )
-    
+
     drink.insert()
 # ROUTES
 
