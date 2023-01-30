@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/root/webdev/Coffee-Shop/backend/env"
+VIRTUAL_ENV="/root/WebDev/Web2/Coffee-Shop/backend/env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
