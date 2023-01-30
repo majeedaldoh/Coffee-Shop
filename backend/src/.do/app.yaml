@@ -1,0 +1,6 @@
+name: coffee-shop
+services:
+- name: web
+  github:
+    repo: majeedaldoh/Coffee-Shop
+    branch: master
