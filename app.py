@@ -4,17 +4,25 @@ from sqlalchemy import exc
 import json
 from flask_cors import CORS
 
-from .database.models import db_drop_and_create_all, setup_db, Drink
-from .auth.auth import AuthError, requires_auth
+from models import db_drop_and_create_all, setup_db, Drink
+from auth import AuthError, requires_auth
 
 app = Flask(__name__)
-setup_db(app)
-CORS(app)
-
-db_drop_and_create_all()
+with app.app_context():
+    setup_db(app)
+    CORS(app)
+    db_drop_and_create_all()
 
 # ROUTES
-
+@app.after_request
+def after_request(response):
+    response.headers.add(
+        'Access-Control-Allow-Headers',
+        'Content-Type,Authorization,true')
+    response.headers.add(
+        'Access-Control-Allow-Methods',
+        'GET,PATCH,POST,DELETE')
+    return response
 
 @app.route('/drinks', methods=['GET'])
 def get_drinks():

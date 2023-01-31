@@ -1,6 +1,6 @@
 import os
 from flask_sqlalchemy import SQLAlchemy
-from SQLAlchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer
 import json
 
 #database_filename = "database.db"
